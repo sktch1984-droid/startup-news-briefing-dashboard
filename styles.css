@@ -105,6 +105,116 @@ h1, h2, h3, h4, .badge, .step-number, .impact-value {
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 }
 
+/* Analyze step cards */
+.analyze-step-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+.analyze-step-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+.analyze-step-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.analyze-step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.analyze-step-head h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+.analyze-step-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(0, 102, 255, 0.08);
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+}
+.analyze-step-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+.analyze-step-example {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: .85;
+    border-top: 1px dashed var(--glass-border);
+    padding-top: 8px;
+}
+.analyze-step-priority {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.analyze-step-priority i {
+    color: var(--primary);
+    font-size: 0.7rem;
+}
+@media (max-width: 768px) {
+    .analyze-step-grid { grid-template-columns: 1fr; }
+}
+
+/* Analyze step - filtering funnel & case examples (compact, embedded in workflow card) */
+.analyze-detail-challenge { max-width: 100%; margin: 24px 0 0; padding: 18px 20px; }
+.analyze-detail-challenge .box-header { font-size: 1.2rem; margin-bottom: 8px; }
+.analyze-detail-challenge p { font-size: 1rem !important; }
+
+.analyze-detail-funnel { max-width: 100%; gap: 10px; margin: 24px -16px 0; width: calc(100% + 32px); }
+.analyze-detail-funnel .funnel-title { font-size: 1.3rem; margin-bottom: 6px; }
+.analyze-detail-funnel .funnel-layer { padding: 14px 20px; flex-direction: row; align-items: center; gap: 12px; }
+.analyze-detail-funnel .layer-1 { width: 100%; }
+.analyze-detail-funnel .layer-2 { width: 92%; margin: 0 auto; }
+.analyze-detail-funnel .layer-3 { width: 84%; margin: 0 auto; }
+.analyze-detail-funnel .layer-title { font-size: 1rem; min-width: auto; text-align: left; flex-shrink: 0; }
+.analyze-detail-funnel .layer-desc { font-size: 0.95rem; text-align: center !important; flex: 1; }
+
+.analyze-detail-grid { grid-template-columns: 1fr; gap: 14px; }
+.analyze-detail-grid .case-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+.analyze-detail-grid .case-badge { font-size: 0.75rem; margin-bottom: 6px; }
+.analyze-detail-grid .case-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.analyze-detail-grid .method-tag { font-size: 0.78rem; padding: 3px 10px; margin-bottom: 12px; }
+.analyze-detail-grid .case-example h4 { font-size: 0.9rem; margin-bottom: 8px; }
+.analyze-detail-grid .check-list { margin-bottom: 12px; }
+.analyze-detail-grid .check-list li { margin-bottom: 8px; font-size: 0.85rem; }
+.analyze-detail-grid .check-title { font-size: 0.85rem; margin-bottom: 4px; }
+.analyze-detail-grid .check-desc { padding-left: 22px; }
+.analyze-detail-grid .case-result { font-size: 0.85rem; padding-top: 10px; }
+
 .badge {
     display: inline-block;
     padding: 6px 16px;
