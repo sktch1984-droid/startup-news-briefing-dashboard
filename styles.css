@@ -374,7 +374,7 @@ h1, h2, h3, h4, .badge, .step-number, .impact-value {
     .grid-3 { grid-template-columns: 1fr; }
     .case-grid { grid-template-columns: 1fr; }
     .impact-grid { grid-template-columns: 1fr; }
-    .workflow-step { flex-direction: column; text-align: center; gap: 15px;}
+    .workflow-step { flex-direction: column; align-items: stretch; text-align: center; gap: 15px;}
     .step-number { text-align: center; }
     .layer-1, .layer-2, .layer-3 { width: 100%; flex-direction: column; text-align: center; gap: 10px;}
     .layer-desc { text-align: center; }
