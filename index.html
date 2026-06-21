@@ -19,47 +19,21 @@
             </div>
             <div class="header-meta">
                 <span class="header-date" id="headerDate"></span>
-                <span class="header-badge">3 Projects</span>
+                <span class="header-badge" id="headerBadge"></span>
             </div>
         </div>
     </header>
 
     <!-- Stats Bar -->
     <section class="stats-bar">
-        <div class="container stats-inner">
-            <div class="stat-chip">
-                <i class="fa-solid fa-folder-open"></i>
-                <span>전체 보고서 <strong>3</strong></span>
-            </div>
-            <div class="stat-chip">
-                <i class="fa-solid fa-spinner fa-spin-pulse"></i>
-                <span>진행중 <strong>2</strong></span>
-            </div>
-            <div class="stat-chip">
-                <i class="fa-solid fa-check-circle"></i>
-                <span>운영중 <strong>1</strong></span>
-            </div>
-            <div class="stat-chip">
-                <i class="fa-solid fa-tags"></i>
-                <span>카테고리 <strong>3</strong></span>
-            </div>
-        </div>
+        <div class="container stats-inner" id="statsBar"></div>
     </section>
 
     <!-- Filter Bar -->
     <section class="filter-bar">
         <div class="container filter-inner">
-            <div class="filter-group">
-                <button class="filter-btn active" data-filter="all">전체</button>
-                <button class="filter-btn" data-filter="ux">UX/UI</button>
-                <button class="filter-btn" data-filter="ai">AI/AX</button>
-                <button class="filter-btn" data-filter="data">데이터</button>
-            </div>
-            <div class="filter-group">
-                <button class="filter-btn" data-status="all">모든 상태</button>
-                <button class="filter-btn" data-status="progress">진행중</button>
-                <button class="filter-btn" data-status="live">운영중</button>
-            </div>
+            <div class="filter-group" id="categoryFilters"></div>
+            <div class="filter-group" id="statusFilters"></div>
         </div>
     </section>
 
@@ -69,135 +43,7 @@
             <div class="section-title-row">
                 <h2><i class="fa-solid fa-layer-group"></i> 프로젝트 보고서</h2>
             </div>
-
-            <div class="report-grid" id="reportGrid">
-
-                <!-- Card 1: UX 개편 -->
-                <article class="report-card" data-category="ux" data-status="progress">
-                    <div class="card-top">
-                        <div class="card-badges">
-                            <span class="cat-badge cat-ux">UX/UI</span>
-                            <span class="status-badge status-progress">진행중</span>
-                        </div>
-                        <a href="https://willowy-starburst-22786f.netlify.app/" target="_blank" class="card-link" title="보고서 열기"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3 class="card-title">SKTCH 플랫폼 UX 개편</h3>
-                    <p class="card-summary">메인 페이지 전면 개편 → 페르소나 기반 온보딩 → 마이페이지 AI 연계까지 3차에 걸친 UX 로드맵. 추가 예산 3,400만원 범위의 GNB·서브페이지 확장 포함.</p>
-                    <div class="card-keywords">
-                        <span class="keyword">페르소나</span>
-                        <span class="keyword">온보딩</span>
-                        <span class="keyword">모바일 대응</span>
-                        <span class="keyword">GNB</span>
-                        <span class="keyword">마이페이지</span>
-                    </div>
-                    <div class="card-meta">
-                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> 2026.06 ~ 10</div>
-                        <div class="meta-item"><i class="fa-solid fa-list-check"></i> 3차 업데이트</div>
-                        <div class="meta-item"><i class="fa-solid fa-won-sign"></i> 기본 + 3,400만</div>
-                    </div>
-                    <div class="card-milestones">
-                        <div class="milestone">
-                            <span class="ms-dot done"></span>
-                            <span class="ms-label">1차 메인 개편 (6월)</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot current"></span>
-                            <span class="ms-label">2차 온보딩 (8월)</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot upcoming"></span>
-                            <span class="ms-label">3차 AI 연계 (10월)</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 2: AX Report -->
-                <article class="report-card" data-category="ai" data-status="progress">
-                    <div class="card-top">
-                        <div class="card-badges">
-                            <span class="cat-badge cat-ai">AI/AX</span>
-                            <span class="status-badge status-progress">진행중</span>
-                        </div>
-                        <a href="https://sktch1984-droid.github.io/ax-report/" target="_blank" class="card-link" title="보고서 열기"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3 class="card-title">AI 연동 기능 개발 현황</h3>
-                    <p class="card-summary">AI 심사 에이전트(6단계 자동화)와 AI Q&A 챗봇 2개 트랙 동시 개발. 심사 에이전트는 6월 말 1차 배포 예정, 챗봇은 600개 Q&A DB 기반 RAG 적용으로 자동 완결률 90% 목표.</p>
-                    <div class="card-keywords">
-                        <span class="keyword">심사 자동화</span>
-                        <span class="keyword">RAG</span>
-                        <span class="keyword">팩트체크</span>
-                        <span class="keyword">챗봇</span>
-                        <span class="keyword">KIPRIS</span>
-                    </div>
-                    <div class="card-meta">
-                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> 2026.04 ~ 12</div>
-                        <div class="meta-item"><i class="fa-solid fa-list-check"></i> 2개 트랙</div>
-                        <div class="meta-item"><i class="fa-solid fa-bullseye"></i> 6월 말 1차 배포</div>
-                    </div>
-                    <div class="card-milestones">
-                        <div class="milestone">
-                            <span class="ms-dot done"></span>
-                            <span class="ms-label">UI/UX 와이어프레임 100%</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot done"></span>
-                            <span class="ms-label">개발 인프라 100%</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot current"></span>
-                            <span class="ms-label">1차 핵심기능 (~6.29)</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot upcoming"></span>
-                            <span class="ms-label">시스템 상용화 (8월)</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 3: 뉴스 모니터링 -->
-                <article class="report-card" data-category="data" data-status="live">
-                    <div class="card-top">
-                        <div class="card-badges">
-                            <span class="cat-badge cat-data">데이터</span>
-                            <span class="status-badge status-live">운영중</span>
-                        </div>
-                        <a href="https://sktch1984-droid.github.io/startup-news-monitoring-view/" target="_blank" class="card-link" title="보고서 열기"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3 class="card-title">AI 스타트업 뉴스 모니터링 시스템</h3>
-                    <p class="card-summary">Alumni 500+개사 대상 뉴스 자동 수집·분석 파이프라인. Naver API → 중복제거 → 이슈그룹화 → The VC 연동 → 주간 메일 브리핑까지 5단계 워크플로우로 모니터링 시간 95% 절감.</p>
-                    <div class="card-keywords">
-                        <span class="keyword">뉴스 수집</span>
-                        <span class="keyword">중복 제거</span>
-                        <span class="keyword">The VC</span>
-                        <span class="keyword">메일 브리핑</span>
-                        <span class="keyword">210개사</span>
-                    </div>
-                    <div class="card-meta">
-                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> 2026.04 ~ 운영중</div>
-                        <div class="meta-item"><i class="fa-solid fa-list-check"></i> 5단계 파이프라인</div>
-                        <div class="meta-item"><i class="fa-solid fa-chart-line"></i> 95% 효율화</div>
-                    </div>
-                    <div class="card-milestones">
-                        <div class="milestone">
-                            <span class="ms-dot done"></span>
-                            <span class="ms-label">시스템 구축 완료</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot done"></span>
-                            <span class="ms-label">주간 브리핑 자동 발송</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot done"></span>
-                            <span class="ms-label">The VC 연동 완료</span>
-                        </div>
-                        <div class="milestone">
-                            <span class="ms-dot current"></span>
-                            <span class="ms-label">운영 및 고도화</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
+            <div class="report-grid" id="reportGrid"></div>
         </div>
     </section>
 
@@ -214,66 +60,8 @@
                         <span>4월</span><span>5월</span><span>6월</span><span>7월</span><span>8월</span><span>9월</span><span>10월</span><span>11월</span><span>12월</span>
                     </div>
                 </div>
-                <!-- Today marker -->
-                <div class="timeline-body">
+                <div class="timeline-body" id="timelineBody">
                     <div class="today-line" id="todayLine"></div>
-
-                    <!-- UX 개편 -->
-                    <div class="tl-row">
-                        <div class="tl-label-col">
-                            <span class="tl-dot cat-ux-bg"></span>
-                            <span>UX 개편</span>
-                        </div>
-                        <div class="tl-months">
-                            <div class="tl-bar cat-ux-bar" style="grid-column: 3 / 4;">
-                                <span class="tl-bar-text">1차</span>
-                            </div>
-                            <div class="tl-bar cat-ux-bar" style="grid-column: 5 / 6;">
-                                <span class="tl-bar-text">2차</span>
-                            </div>
-                            <div class="tl-bar cat-ux-bar" style="grid-column: 7 / 8;">
-                                <span class="tl-bar-text">3차</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AX Report -->
-                    <div class="tl-row">
-                        <div class="tl-label-col">
-                            <span class="tl-dot cat-ai-bg"></span>
-                            <span>AI/AX 개발</span>
-                        </div>
-                        <div class="tl-months">
-                            <div class="tl-bar cat-ai-bar" style="grid-column: 1 / 3;">
-                                <span class="tl-bar-text">준비/기획</span>
-                            </div>
-                            <div class="tl-bar cat-ai-bar bar-active" style="grid-column: 3 / 5;">
-                                <span class="tl-bar-text">핵심기능 개발</span>
-                            </div>
-                            <div class="tl-bar cat-ai-bar" style="grid-column: 5 / 6;">
-                                <span class="tl-bar-text">상용화</span>
-                            </div>
-                            <div class="tl-bar cat-ai-bar bar-future" style="grid-column: 6 / 10;">
-                                <span class="tl-bar-text">고도화</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 뉴스 모니터링 -->
-                    <div class="tl-row">
-                        <div class="tl-label-col">
-                            <span class="tl-dot cat-data-bg"></span>
-                            <span>뉴스 모니터링</span>
-                        </div>
-                        <div class="tl-months">
-                            <div class="tl-bar cat-data-bar" style="grid-column: 1 / 3;">
-                                <span class="tl-bar-text">구축</span>
-                            </div>
-                            <div class="tl-bar cat-data-bar bar-active" style="grid-column: 3 / 10;">
-                                <span class="tl-bar-text">운영 & 고도화</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

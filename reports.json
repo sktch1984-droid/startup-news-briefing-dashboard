@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ux-redesign",
+    "title": "SKTCH 플랫폼 UX 개편",
+    "category": "ux",
+    "categoryLabel": "UX/UI",
+    "status": "progress",
+    "statusLabel": "진행중",
+    "summary": "메인 페이지 전면 개편 → 페르소나 기반 온보딩 → 마이페이지 AI 연계까지 3차에 걸친 UX 로드맵. 추가 예산 3,400만원 범위의 GNB·서브페이지 확장 포함.",
+    "keywords": ["페르소나", "온보딩", "모바일 대응", "GNB", "마이페이지"],
+    "url": "https://willowy-starburst-22786f.netlify.app/",
+    "meta": [
+      { "icon": "fa-regular fa-calendar", "text": "2026.06 ~ 10" },
+      { "icon": "fa-solid fa-list-check", "text": "3차 업데이트" },
+      { "icon": "fa-solid fa-won-sign", "text": "기본 + 3,400만" }
+    ],
+    "milestones": [
+      { "status": "done", "label": "1차 메인 개편 (6월)" },
+      { "status": "current", "label": "2차 온보딩 (8월)" },
+      { "status": "upcoming", "label": "3차 AI 연계 (10월)" }
+    ],
+    "timeline": [
+      { "start": 3, "end": 4, "label": "1차" },
+      { "start": 5, "end": 6, "label": "2차" },
+      { "start": 7, "end": 8, "label": "3차" }
+    ]
+  },
+  {
+    "id": "ax-report",
+    "title": "AI 연동 기능 개발 현황",
+    "category": "ai",
+    "categoryLabel": "AI/AX",
+    "status": "progress",
+    "statusLabel": "진행중",
+    "summary": "AI 심사 에이전트(6단계 자동화)와 AI Q&A 챗봇 2개 트랙 동시 개발. 심사 에이전트는 6월 말 1차 배포 예정, 챗봇은 600개 Q&A DB 기반 RAG 적용으로 자동 완결률 90% 목표.",
+    "keywords": ["심사 자동화", "RAG", "팩트체크", "챗봇", "KIPRIS"],
+    "url": "https://sktch1984-droid.github.io/ax-report/",
+    "meta": [
+      { "icon": "fa-regular fa-calendar", "text": "2026.04 ~ 12" },
+      { "icon": "fa-solid fa-list-check", "text": "2개 트랙" },
+      { "icon": "fa-solid fa-bullseye", "text": "6월 말 1차 배포" }
+    ],
+    "milestones": [
+      { "status": "done", "label": "UI/UX 와이어프레임 100%" },
+      { "status": "done", "label": "개발 인프라 100%" },
+      { "status": "current", "label": "1차 핵심기능 (~6.29)" },
+      { "status": "upcoming", "label": "시스템 상용화 (8월)" }
+    ],
+    "timeline": [
+      { "start": 1, "end": 3, "label": "준비/기획" },
+      { "start": 3, "end": 5, "label": "핵심기능 개발", "active": true },
+      { "start": 5, "end": 6, "label": "상용화" },
+      { "start": 6, "end": 10, "label": "고도화", "future": true }
+    ]
+  },
+  {
+    "id": "news-monitoring",
+    "title": "AI 스타트업 뉴스 모니터링 시스템",
+    "category": "data",
+    "categoryLabel": "데이터",
+    "status": "live",
+    "statusLabel": "운영중",
+    "summary": "Alumni 500+개사 대상 뉴스 자동 수집·분석 파이프라인. Naver API → 중복제거 → 이슈그룹화 → The VC 연동 → 주간 메일 브리핑까지 5단계 워크플로우로 모니터링 시간 95% 절감.",
+    "keywords": ["뉴스 수집", "중복 제거", "The VC", "메일 브리핑", "210개사"],
+    "url": "https://sktch1984-droid.github.io/startup-news-monitoring-view/",
+    "meta": [
+      { "icon": "fa-regular fa-calendar", "text": "2026.04 ~ 운영중" },
+      { "icon": "fa-solid fa-list-check", "text": "5단계 파이프라인" },
+      { "icon": "fa-solid fa-chart-line", "text": "95% 효율화" }
+    ],
+    "milestones": [
+      { "status": "done", "label": "시스템 구축 완료" },
+      { "status": "done", "label": "주간 브리핑 자동 발송" },
+      { "status": "done", "label": "The VC 연동 완료" },
+      { "status": "current", "label": "운영 및 고도화" }
+    ],
+    "timeline": [
+      { "start": 1, "end": 3, "label": "구축" },
+      { "start": 3, "end": 10, "label": "운영 & 고도화", "active": true }
+    ]
+  }
+]
