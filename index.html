@@ -3,543 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKTCH AI Startup News Monitoring</title>
+    <title>SKTCH Report Dashboard</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="bg-effects">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="glow-orb orb-3"></div>
-    </div>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">S</span>
+                <span class="logo-text">SKTCH Report Dashboard</span>
+            </div>
+            <div class="header-meta">
+                <span class="header-date" id="headerDate"></span>
+                <span class="header-badge">3 Projects</span>
+            </div>
+        </div>
+    </header>
 
-    <!-- 타이틀 -->
-    <section id="section-1" class="hero section-fullscreen reveal">
-        <div class="container text-center">
-            <h1 class="main-title">AI 기반 스타트업 뉴스 모니터링 시스템 구축</h1>
-            <p class="sub-title">Alumni 관리 자동화 및 비즈니스 협업 기회 포착</p>
-            <div class="scroll-indicator">
-                <span>Scroll to Explore</span>
-                <i class="fa-solid fa-chevron-down"></i>
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container stats-inner">
+            <div class="stat-chip">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>전체 보고서 <strong>3</strong></span>
+            </div>
+            <div class="stat-chip">
+                <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                <span>진행중 <strong>2</strong></span>
+            </div>
+            <div class="stat-chip">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>운영중 <strong>1</strong></span>
+            </div>
+            <div class="stat-chip">
+                <i class="fa-solid fa-tags"></i>
+                <span>카테고리 <strong>3</strong></span>
             </div>
         </div>
     </section>
 
-    <!-- #1: 추진 배경 -->
-    <section id="section-2" class="section-padding reveal">
+    <!-- Filter Bar -->
+    <section class="filter-bar">
+        <div class="container filter-inner">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="ux">UX/UI</button>
+                <button class="filter-btn" data-filter="ai">AI/AX</button>
+                <button class="filter-btn" data-filter="data">데이터</button>
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn" data-status="all">모든 상태</button>
+                <button class="filter-btn" data-status="progress">진행중</button>
+                <button class="filter-btn" data-status="live">운영중</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Cards -->
+    <section class="report-section">
         <div class="container">
-            <div class="section-header">
-                <h2>#1 추진 배경</h2>
+            <div class="section-title-row">
+                <h2><i class="fa-solid fa-layer-group"></i> 프로젝트 보고서</h2>
             </div>
-            <div class="content-row">
-                <div class="glass-card flex-1">
-                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>Alumni 규모 확대(500+개사)</h3>
-                </div>
-                <div class="problem-list flex-2">
-                    <div class="problem-item reveal fade-left">
-                        <i class="fa-solid fa-clock"></i>
-                        <p>시간 경과에 따른 개별 기업 소식 추적의 어려움</p>
+
+            <div class="report-grid" id="reportGrid">
+
+                <!-- Card 1: UX 개편 -->
+                <article class="report-card" data-category="ux" data-status="progress">
+                    <div class="card-top">
+                        <div class="card-badges">
+                            <span class="cat-badge cat-ux">UX/UI</span>
+                            <span class="status-badge status-progress">진행중</span>
+                        </div>
+                        <a href="https://willowy-starburst-22786f.netlify.app/" target="_blank" class="card-link" title="보고서 열기"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-                    <div class="problem-item reveal fade-left delay-1">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <p>수동 모니터링 시 발생하는 <strong>과도한 공수 및 정보 누락</strong></p>
+                    <h3 class="card-title">SKTCH 플랫폼 UX 개편</h3>
+                    <p class="card-summary">메인 페이지 전면 개편 → 페르소나 기반 온보딩 → 마이페이지 AI 연계까지 3차에 걸친 UX 로드맵. 추가 예산 3,400만원 범위의 GNB·서브페이지 확장 포함.</p>
+                    <div class="card-keywords">
+                        <span class="keyword">페르소나</span>
+                        <span class="keyword">온보딩</span>
+                        <span class="keyword">모바일 대응</span>
+                        <span class="keyword">GNB</span>
+                        <span class="keyword">마이페이지</span>
                     </div>
-                    <div class="problem-item reveal fade-left delay-2">
-                        <i class="fa-solid fa-handshake-slash"></i>
-                        <p>유의미한 사업 협력 기회 포착의 지연</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> 2026.06 ~ 10</div>
+                        <div class="meta-item"><i class="fa-solid fa-list-check"></i> 3차 업데이트</div>
+                        <div class="meta-item"><i class="fa-solid fa-won-sign"></i> 기본 + 3,400만</div>
                     </div>
-                </div>
+                    <div class="card-milestones">
+                        <div class="milestone">
+                            <span class="ms-dot done"></span>
+                            <span class="ms-label">1차 메인 개편 (6월)</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot current"></span>
+                            <span class="ms-label">2차 온보딩 (8월)</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot upcoming"></span>
+                            <span class="ms-label">3차 AI 연계 (10월)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: AX Report -->
+                <article class="report-card" data-category="ai" data-status="progress">
+                    <div class="card-top">
+                        <div class="card-badges">
+                            <span class="cat-badge cat-ai">AI/AX</span>
+                            <span class="status-badge status-progress">진행중</span>
+                        </div>
+                        <a href="https://sktch1984-droid.github.io/ax-report/" target="_blank" class="card-link" title="보고서 열기"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="card-title">AI 연동 기능 개발 현황</h3>
+                    <p class="card-summary">AI 심사 에이전트(6단계 자동화)와 AI Q&A 챗봇 2개 트랙 동시 개발. 심사 에이전트는 6월 말 1차 배포 예정, 챗봇은 600개 Q&A DB 기반 RAG 적용으로 자동 완결률 90% 목표.</p>
+                    <div class="card-keywords">
+                        <span class="keyword">심사 자동화</span>
+                        <span class="keyword">RAG</span>
+                        <span class="keyword">팩트체크</span>
+                        <span class="keyword">챗봇</span>
+                        <span class="keyword">KIPRIS</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> 2026.04 ~ 12</div>
+                        <div class="meta-item"><i class="fa-solid fa-list-check"></i> 2개 트랙</div>
+                        <div class="meta-item"><i class="fa-solid fa-bullseye"></i> 6월 말 1차 배포</div>
+                    </div>
+                    <div class="card-milestones">
+                        <div class="milestone">
+                            <span class="ms-dot done"></span>
+                            <span class="ms-label">UI/UX 와이어프레임 100%</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot done"></span>
+                            <span class="ms-label">개발 인프라 100%</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot current"></span>
+                            <span class="ms-label">1차 핵심기능 (~6.29)</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot upcoming"></span>
+                            <span class="ms-label">시스템 상용화 (8월)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: 뉴스 모니터링 -->
+                <article class="report-card" data-category="data" data-status="live">
+                    <div class="card-top">
+                        <div class="card-badges">
+                            <span class="cat-badge cat-data">데이터</span>
+                            <span class="status-badge status-live">운영중</span>
+                        </div>
+                        <a href="https://sktch1984-droid.github.io/startup-news-monitoring-view/" target="_blank" class="card-link" title="보고서 열기"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="card-title">AI 스타트업 뉴스 모니터링 시스템</h3>
+                    <p class="card-summary">Alumni 500+개사 대상 뉴스 자동 수집·분석 파이프라인. Naver API → 중복제거 → 이슈그룹화 → The VC 연동 → 주간 메일 브리핑까지 5단계 워크플로우로 모니터링 시간 95% 절감.</p>
+                    <div class="card-keywords">
+                        <span class="keyword">뉴스 수집</span>
+                        <span class="keyword">중복 제거</span>
+                        <span class="keyword">The VC</span>
+                        <span class="keyword">메일 브리핑</span>
+                        <span class="keyword">210개사</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item"><i class="fa-regular fa-calendar"></i> 2026.04 ~ 운영중</div>
+                        <div class="meta-item"><i class="fa-solid fa-list-check"></i> 5단계 파이프라인</div>
+                        <div class="meta-item"><i class="fa-solid fa-chart-line"></i> 95% 효율화</div>
+                    </div>
+                    <div class="card-milestones">
+                        <div class="milestone">
+                            <span class="ms-dot done"></span>
+                            <span class="ms-label">시스템 구축 완료</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot done"></span>
+                            <span class="ms-label">주간 브리핑 자동 발송</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot done"></span>
+                            <span class="ms-label">The VC 연동 완료</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="ms-dot current"></span>
+                            <span class="ms-label">운영 및 고도화</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- #2: 구축 목적 -->
-    <section id="section-3" class="section-padding reveal">
+    <!-- Timeline -->
+    <section class="timeline-section">
         <div class="container">
-            <div class="section-header right-align">
-                <h2>#2 구축 목적</h2>
+            <div class="section-title-row">
+                <h2><i class="fa-solid fa-timeline"></i> 프로젝트 타임라인</h2>
             </div>
-            <div class="grid-3">
-                <div class="glass-card objective-card reveal fade-up">
-                    <div class="icon-wrapper blue"><i class="fa-solid fa-satellite-dish"></i></div>
-                    <h3>지속적 Follow-up</h3>
-                    <p>Alumni 기업의 최신 동향을 실시간/자동으로 파악</p>
+            <div class="timeline-chart">
+                <div class="timeline-header">
+                    <div class="tl-label-col">프로젝트</div>
+                    <div class="tl-months">
+                        <span>4월</span><span>5월</span><span>6월</span><span>7월</span><span>8월</span><span>9월</span><span>10월</span><span>11월</span><span>12월</span>
+                    </div>
                 </div>
-                <div class="glass-card objective-card reveal fade-up delay-1">
-                    <div class="icon-wrapper red"><i class="fa-solid fa-fire"></i></div>
-                    <h3>협업 재점화</h3>
-                    <p>기술 고도화, 투자 유치 등 이슈 발생 시 즉각적인 협업(PoC) 검토</p>
-                </div>
-                <div class="glass-card objective-card reveal fade-up delay-2">
-                    <div class="icon-wrapper green"><i class="fa-solid fa-database"></i></div>
-                    <h3>데이터 자산화</h3>
-                    <p>뉴스, 기업정보, 요약 리포트를 DB로 누적 관리</p>
+                <!-- Today marker -->
+                <div class="timeline-body">
+                    <div class="today-line" id="todayLine"></div>
+
+                    <!-- UX 개편 -->
+                    <div class="tl-row">
+                        <div class="tl-label-col">
+                            <span class="tl-dot cat-ux-bg"></span>
+                            <span>UX 개편</span>
+                        </div>
+                        <div class="tl-months">
+                            <div class="tl-bar cat-ux-bar" style="grid-column: 3 / 4;">
+                                <span class="tl-bar-text">1차</span>
+                            </div>
+                            <div class="tl-bar cat-ux-bar" style="grid-column: 5 / 6;">
+                                <span class="tl-bar-text">2차</span>
+                            </div>
+                            <div class="tl-bar cat-ux-bar" style="grid-column: 7 / 8;">
+                                <span class="tl-bar-text">3차</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AX Report -->
+                    <div class="tl-row">
+                        <div class="tl-label-col">
+                            <span class="tl-dot cat-ai-bg"></span>
+                            <span>AI/AX 개발</span>
+                        </div>
+                        <div class="tl-months">
+                            <div class="tl-bar cat-ai-bar" style="grid-column: 1 / 3;">
+                                <span class="tl-bar-text">준비/기획</span>
+                            </div>
+                            <div class="tl-bar cat-ai-bar bar-active" style="grid-column: 3 / 5;">
+                                <span class="tl-bar-text">핵심기능 개발</span>
+                            </div>
+                            <div class="tl-bar cat-ai-bar" style="grid-column: 5 / 6;">
+                                <span class="tl-bar-text">상용화</span>
+                            </div>
+                            <div class="tl-bar cat-ai-bar bar-future" style="grid-column: 6 / 10;">
+                                <span class="tl-bar-text">고도화</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 뉴스 모니터링 -->
+                    <div class="tl-row">
+                        <div class="tl-label-col">
+                            <span class="tl-dot cat-data-bg"></span>
+                            <span>뉴스 모니터링</span>
+                        </div>
+                        <div class="tl-months">
+                            <div class="tl-bar cat-data-bar" style="grid-column: 1 / 3;">
+                                <span class="tl-bar-text">구축</span>
+                            </div>
+                            <div class="tl-bar cat-data-bar bar-active" style="grid-column: 3 / 10;">
+                                <span class="tl-bar-text">운영 & 고도화</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- #3: 시스템 설계 -->
-    <section id="section-4" class="section-padding">
+    <footer class="dashboard-footer">
         <div class="container">
-            <div class="section-header">
-                <h2>#3 시스템 설계 (5단계 워크플로우)</h2>
-            </div>
-
-            <div class="workflow-container">
-
-                <!-- 01 Collect -->
-                <div class="workflow-step reveal fade-right">
-                    <div class="step-number">01</div>
-                    <div class="step-content glass-card">
-                        <h3><i class="fa-brands fa-python"></i> Collect</h3>
-                        <p><strong>Monitoring DB 기반 뉴스 자동 수집</strong></p>
-                        <p><strong>Alumni 모니터링 DB</strong> (기업별 검색 쿼리 · 키워드 조건) → <strong>Naver 뉴스 검색 API</strong> 호출 (일 25,000건 · 회당 최대 100건) → 최신순 정렬 수집</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; line-height: 1.4;">
-                            일간/주간/월간 수집 모드, 최신순 검색, 호출 제한 대응, 기업별 병렬 수집 적용
-                        </p>
-
-                        <!-- Monitoring DB 예시 테이블 -->
-                        <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
-                            <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
-                                <i class="fa-solid fa-table"></i> Monitoring DB 예시 (SKTCH_News_Master)
-                            </div>
-                            <div style="overflow-x: auto; max-width: 100%; min-width: 0; -webkit-overflow-scrolling: touch;">
-                                <table class="monitoring-db-table" style="width: 100%; border-collapse: collapse; font-size: 0.8rem; line-height: 1.6;">
-                                    <thead>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);">
-                                            <th style="text-align: left; padding: 8px 10px; white-space: nowrap; color: var(--primary);">기업명</th>
-                                            <th style="text-align: left; padding: 8px 10px; white-space: nowrap; color: var(--primary);">프로그램</th>
-                                            <th style="text-align: left; padding: 8px 10px; white-space: nowrap; color: #4ade80;">포함 키워드</th>
-                                            <th style="text-align: left; padding: 8px 10px; white-space: nowrap; color: #f87171;">제외 키워드</th>
-                                            <th style="text-align: left; padding: 8px 10px; white-space: nowrap; color: #60a5fa;">Dedupe 그룹</th>
-                                            <th style="text-align: left; padding: 8px 10px; white-space: nowrap; color: #60a5fa;">Dedupe 키워드</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
-                                            <td style="padding: 8px 10px; font-weight: 700; white-space: nowrap;">업스테이지</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted); white-space: nowrap;">AI Startup 2023</td>
-                                            <td style="padding: 8px 10px; color: #4ade80;">업스테이지</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
-                                            <td style="padding: 8px 10px; font-weight: 700; white-space: nowrap;">파우스트</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted); white-space: nowrap;">창업도약 2024</td>
-                                            <td style="padding: 8px 10px; color: #4ade80;">파우스트</td>
-                                            <td style="padding: 8px 10px; color: #f87171; font-size: 0.75rem;">괴테|연극|뮤지컬|공연|배우...</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
-                                            <td style="padding: 8px 10px; font-weight: 700; white-space: nowrap;">콕스웨이브</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted); white-space: nowrap;">창업도약 2025</td>
-                                            <td style="padding: 8px 10px; color: #4ade80;">콕스웨이브</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                            <td style="padding: 8px 10px; color: #60a5fa; font-size: 0.75rem;">cox_openai_hackathon</td>
-                                            <td style="padding: 8px 10px; color: #60a5fa; font-size: 0.75rem;">오픈AI|OpenAI|해커톤|성료</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.07);">
-                                            <td style="padding: 8px 10px; font-weight: 700; white-space: nowrap;">에이아이브</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted); white-space: nowrap;">AI Startup 2025</td>
-                                            <td style="padding: 8px 10px; color: #4ade80;">에이아이브</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                            <td style="padding: 8px 10px; color: #60a5fa; font-size: 0.75rem;">aive_pre_a_funding</td>
-                                            <td style="padding: 8px 10px; color: #60a5fa; font-size: 0.75rem;">투자|유치|프리A|6억</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 8px 10px; font-weight: 700; white-space: nowrap;">브로즈</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted); white-space: nowrap;">AI Startup 2025</td>
-                                            <td style="padding: 8px 10px; color: #4ade80;">브로즈</td>
-                                            <td style="padding: 8px 10px; color: #f87171; font-size: 0.75rem;">워너브로즈|브로스|brothers...</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                            <td style="padding: 8px 10px; color: var(--text-muted);">—</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- 02 Analyze -->
-                <div class="workflow-step reveal fade-left">
-                    <div class="step-number">02</div>
-                    <div class="step-content glass-card">
-                        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Analyze</h3>
-                        <p><strong>대표 기사 선별 및 요약 — 전체 워크플로우 중 가장 많은 공수가 투입되는 핵심 단계</strong></p>
-                        <p>기업당 수십~100여 건씩 쏟아지는 원본 기사를, 사람이 일일이 읽지 않아도 <strong>"진짜 의미 있는 소식 1건"</strong>으로 압축. 베껴 쓴 중복 기사·단신·무관 언급은 제거하고, 핵심 이슈(투자 유치, 파트너십, 신제품 출시 등)만 추출.</p>
-
-                        <div style="margin-top: 14px; padding: 12px 16px; background: rgba(255,255,255,0.04); border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0;">
-                          <div style="font-weight:700; color: var(--primary); margin-bottom: 6px; font-size: 0.9rem;">처리 흐름 (4단계 깔때기)</div>
-                          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
-                            <strong>수집된 원본 기사 전체</strong> → ① 비슷한 기사 제거 → ② 같은 이슈끼리 묶기 → ③ 가치 낮은 기사 제외 → ④ 그 기업을 가장 잘 대표하는 기사 1건 선정 → <strong>기업당 대표 기사 1건 + 요약</strong>
-                          </p>
-                        </div>
-
-                        <div class="analyze-step-grid">
-                          <div class="analyze-step-card">
-                            <div class="analyze-step-head">
-                              <span class="analyze-step-num">1</span>
-                              <h4>비슷한 기사 제거</h4>
-                            </div>
-                            <div class="analyze-step-tag">제목 유사도 비교</div>
-                            <p>여러 언론사가 같은 보도자료를 제목만 바꿔 싣는 경우가 다수. 제목 간 <strong>"거의 동일"</strong> 또는 <strong>"한쪽이 다른 쪽을 포함"</strong> 시 동일 기사로 판단해 1건만 유지.</p>
-                            <div class="analyze-step-example">예) "OO사, 50억 투자 유치" / "OO사 50억원 규모 투자 유치 성공" → 같은 기사로 처리</div>
-                          </div>
-                          <div class="analyze-step-card">
-                            <div class="analyze-step-head">
-                              <span class="analyze-step-num">2</span>
-                              <h4>같은 이슈끼리 묶기</h4>
-                            </div>
-                            <div class="analyze-step-tag">이슈 그룹화</div>
-                            <p>제목은 달라도 같은 사건(이벤트)을 다루는 기사들을 그룹화. 기사 종류(투자/제품출시/파트너십/단순언급 등)와 핵심 키워드를 함께 봐서 <strong>"이번 주 가장 큰 이슈" 1개</strong>로 정리.</p>
-                            <div class="analyze-step-example">예) "투자 유치 발표" 기사 3곳 + "투자 유치 후속 인터뷰" 기사 2곳 → 같은 이슈(투자 유치) 1건으로 통합</div>
-                          </div>
-                          <div class="analyze-step-card">
-                            <div class="analyze-step-head">
-                              <span class="analyze-step-num">3</span>
-                              <h4>가치 낮은 기사 제외</h4>
-                            </div>
-                            <div class="analyze-step-tag">노이즈 필터</div>
-                            <p>여러 기업을 한 번에 다루는 <strong>동향 모음</strong>, <strong>단신·브리프</strong>, <strong>채용 공고·설명회 안내</strong> 등 회사 소식으로 보기 어려운 기사 제외.</p>
-                          </div>
-                          <div class="analyze-step-card">
-                            <div class="analyze-step-head">
-                              <span class="analyze-step-num">4</span>
-                              <h4>대표 기사 선정</h4>
-                            </div>
-                            <div class="analyze-step-tag">우선순위 적용</div>
-                            <p>남은 후보 중 <strong>제목에 기업명 직접 언급</strong> 기사를 최우선으로, 없으면 <strong>키워드 매칭</strong> 기사, 여러 건이면 <strong>최신 기사</strong> 순으로 최종 1건 선택.</p>
-                            <div class="analyze-step-priority">
-                              <span>① 제목에 기업명 포함</span>
-                              <i class="fa-solid fa-arrow-right"></i>
-                              <span>② 키워드 매칭</span>
-                              <i class="fa-solid fa-arrow-right"></i>
-                              <span>③ 최신 기사</span>
-                            </div>
-                          </div>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; line-height: 1.4;">💡 별도의 LLM(AI) 호출 없이, 대표 기사의 Naver API <code>description</code>(기사 요약문)을 그대로 활용 (최대 300자, 없으면 제목으로 대체) — 비용·속도 부담 없이 핵심 전달.</p>
-
-                        <div style="margin-top: 14px; padding: 12px 16px; background: rgba(0,0,0,0.18); border-radius: 8px;">
-                          <div style="font-weight:700; color: var(--text-primary); margin-bottom: 6px; font-size: 0.85rem;"><i class="fa-solid fa-code"></i> 적용 기준값 (코드 기준)</div>
-                          <ul style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.7; padding-left: 1.3em;">
-                            <li>제목 유사도 임계값 <code>0.88</code> 이상, 또는 12자 이상 제목끼리 80% 이상 포함 시 동일 기사로 판단</li>
-                            <li>이슈 유형(launch/partnership/adoption/investment/award) + 핵심 키워드 조합으로 같은 이슈 묶음 판단</li>
-                            <li>대표 기사 선정 점수: 제목에 기업명 직접 포함(3점) → 키워드 매칭(2점) → 최신 기사(1점) — 점수·매칭건수 순 정렬 후 상위 20개 기업 요약 생성</li>
-                            <li>최종 요약은 최대 300자로 자르고, description 없는 기업은 "[제목 기반]" 표시 후 제목으로 대체</li>
-                          </ul>
-                        </div>
-
-                        <div class="challenge-box glass-card analyze-detail-challenge reveal fade-up" style="margin-top: 24px;">
-                            <div class="box-header"><i class="fa-solid fa-bolt"></i> Challenge</div>
-                            <p>수집된 기사 전체를 분석 대상으로 넘길 경우 중복·노이즈 기사로 인해 검토 효율 저하</p>
-                        </div>
-
-                        <div class="funnel-container analyze-detail-funnel reveal fade-up delay-1">
-                            <div class="funnel-title">Solution: "깔때기형 필터링"</div>
-                            <div class="funnel-layer layer-1">
-                                <div class="layer-title">① 전체 검색</div>
-                                <div class="layer-desc"><strong>Naver 뉴스 API를 활용한 광범위 수집</strong></div>
-                            </div>
-                            <div class="funnel-layer layer-2">
-                                <div class="layer-title">② 정밀 필터</div>
-                                <div class="layer-desc" style="text-align: center;"><strong>유사도 · 이슈 그룹 · 기업명 기준<br>중복·노이즈 제거</strong></div>
-                            </div>
-                            <div class="funnel-layer layer-3">
-                                <div class="layer-title">③ 대표 기사 선별</div>
-                                <div class="layer-desc" style="text-align: center;"><strong>확인 가치가 높은<br>핵심 기사만 선별</strong></div>
-                            </div>
-                        </div>
-
-                        <div class="case-grid analyze-detail-grid" style="margin-top: 2rem;">
-                            <div class="case-card reveal fade-up">
-                                <div class="case-badge">1차 필터링</div>
-                                <h3>검색 정밀도 향상</h3>
-                                <div class="method-tag">방법: 기업별 포함/제외 키워드 설정</div>
-                                <div class="case-example">
-                                    <h4>사례: "파우스트"</h4>
-                                    <ul class="check-list">
-                                        <li>
-                                            <span class="check-title"><i class="fa-solid fa-plus text-green"></i> <strong>포함 키워드:</strong></span>
-                                            <span class="check-desc">"파우스트" + 스타트업/기업 등 비즈니스 맥락 키워드</span>
-                                        </li>
-                                        <li>
-                                            <span class="check-title"><i class="fa-solid fa-minus text-red"></i> <strong>제외 키워드:</strong></span>
-                                            <span class="check-desc">괴테, 연극, 뮤지컬, 15보병사단 등 동음이의어 노이즈 차단</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="case-result"><i class="fa-solid fa-check-circle"></i> 검색 결과의 정확도를 원천적으로 향상</div>
-                            </div>
-
-                            <div class="case-card reveal fade-up delay-1">
-                                <div class="case-badge">중복 제거</div>
-                                <h3>이슈 그룹화</h3>
-                                <div class="method-tag">방법: 유사 기사를 그룹화하여 대표 기사 1건 선별</div>
-                                <div class="case-example">
-                                    <h4>사례: "콕스웨이브"</h4>
-                                    <ul class="check-list">
-                                        <li>
-                                            <span class="check-title"><i class="fa-solid fa-layer-group text-blue"></i> <strong>이슈 그룹:</strong></span>
-                                            <span class="check-desc">투자 유치, 해커톤 성료, 글로벌 밋업 등</span>
-                                        </li>
-                                        <li>
-                                            <span class="check-title"><i class="fa-solid fa-link text-blue"></i> <strong>중복 판별 키워드:</strong></span>
-                                            <span class="check-desc">각 이슈별 핵심어를 기준으로 동일 이슈 중복 제거</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="case-result"><i class="fa-solid fa-check-circle"></i> 동일 이슈 중복 리포팅 방지 및 정보 밀도 향상</div>
-                            </div>
-
-                            <div class="case-card reveal fade-up delay-2">
-                                <div class="case-badge">대표 기사 선정</div>
-                                <h3>기업명 매칭 검증</h3>
-                                <div class="method-tag">방법: 제목 내 기업명 포함 여부와 검색 키워드 매칭 근거 기준 검증</div>
-                                <div class="case-example">
-                                    <h4>사례: "업스테이지"</h4>
-                                    <ul class="check-list">
-                                        <li>
-                                            <span class="check-title"><i class="fa-solid fa-microscope text-purple"></i> <strong>정합성 검증:</strong></span>
-                                            <span class="check-desc">기업명이 제목에 명확히 포함된 기사와 키워드 매칭 기사를 우선 선별</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="case-result"><i class="fa-solid fa-check-circle"></i> 요약 및 메일 발송 전 최종 데이터 신뢰도 확보</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- 03 Enrich -->
-                <div class="workflow-step reveal fade-right">
-                    <div class="step-number">03</div>
-                    <div class="step-content glass-card">
-                        <h3><i class="fa-solid fa-building-circle-check"></i> Enrich</h3>
-                        <p><strong>The VC 기업정보 연동</strong></p>
-                        <p><strong>선별 기업명</strong> → The VC DB 매칭 → 기업 개요 · 대표자 · 설립일 · 산업 분야 · 주요 제품 · 투자 단계 · 투자자 수 · 임직원 수 · 특허·R&D·B2G 정보 연동</p>
-
-                        <!-- The VC 연동 정보 예시 테이블 -->
-                        <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
-                            <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
-                                <i class="fa-solid fa-building-circle-check"></i> 연동 정보 예시
-                            </div>
-                            <div style="overflow-x: auto; max-width: 100%; min-width: 0; -webkit-overflow-scrolling: touch;">
-                                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; line-height: 1.6;">
-                                    <thead>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.18); color: var(--primary);">
-                                            <th style="text-align: left; padding: 10px 12px; width: 22%;">구분</th>
-                                            <th style="text-align: left; padding: 10px 12px;">연동 정보</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.10);">
-                                            <td style="padding: 10px 12px; font-weight: 800;">기본정보</td>
-                                            <td style="padding: 10px 12px; color: var(--text-muted);">기업명, The VC URL, 기업 유형, 설립일, 대표자, 주소</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.10);">
-                                            <td style="padding: 10px 12px; font-weight: 800;">투자정보</td>
-                                            <td style="padding: 10px 12px; color: var(--text-muted);">최근 투자 라운드, 투자 유치 횟수, 투자자 수</td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.10);">
-                                            <td style="padding: 10px 12px; font-weight: 800;">사업정보</td>
-                                            <td style="padding: 10px 12px; color: var(--text-muted);">산업 분야, 주요 제품, 제품 태그, 기업 소개</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 10px 12px; font-weight: 800;">지표정보</td>
-                                            <td style="padding: 10px 12px; color: var(--text-muted);">임직원 수, 특허 수, R&D 수, B2G 수</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- 04 Store & Dashboard -->
-                <div class="workflow-step reveal fade-left">
-                    <div class="step-number">04</div>
-                    <div class="step-content glass-card highlight-border">
-                        <h3><i class="fa-solid fa-database"></i> Store & Dashboard</h3>
-                        <p><strong>DB 누적 관리 및 웹 조회</strong></p>
-                        <p><strong>선별 기사 · 요약 · 기업 프로필</strong> → SQLite DB 누적 → 웹 대시보드에서 주간 브리핑 · 기업 목록 · 뉴스 검색 · 기업 상세 화면으로 확인</p>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-
-                <!-- 05 Mail -->
-                <div class="workflow-step reveal fade-right">
-                    <div class="step-number">05</div>
-                    <div class="step-content glass-card">
-                        <h3><i class="fa-solid fa-envelope-open-text"></i> Mail</h3>
-                        <p><strong>핵심 뉴스 브리핑 자동 발송</strong></p>
-                        <p><strong>메일 상단 헤드라인</strong> · <strong>기업별 상세 카드</strong> → 웹 접속 없이 관심 기업의 핵심 이슈 빠르게 확인</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- #4: 모니터링 대상 최적화 -->
-    <section id="section-5" class="section-padding dark-bg reveal">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>#4 모니터링 대상 최적화</h2>
-            </div>
-
-            <div class="content-row" style="margin-bottom: 3rem; gap: 2rem; display: flex; flex-wrap: wrap; align-items: stretch;">
-                <div class="glass-card reveal fade-up flex-1" style="min-width: 300px; display: flex; flex-direction: column;">
-                    <div class="box-header" style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--primary); font-weight: 800;">
-                        <i class="fa-solid fa-users"></i> 모니터링 대상 요약 (총 210개사, 2019년~)
-                    </div>
-                    <ul class="check-list" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-evenly; gap: 1rem;">
-                        <li><span class="check-title"><i class="fa-solid fa-check text-blue"></i> <strong>IMPACTUPs</strong> (2019~2020):</span> 20개사</li>
-                        <li><span class="check-title"><i class="fa-solid fa-check text-blue"></i> <strong>ESG Korea</strong> (2021~2025):</span> 78개사</li>
-                        <li><span class="check-title"><i class="fa-solid fa-check text-blue"></i> <strong>True Innovation</strong> (2021~3기):</span> 42개사</li>
-                        <li><span class="check-title"><i class="fa-solid fa-check text-blue"></i> <strong>AI Startup Accelerator</strong> (2023~2025):</span> 45개사</li>
-                        <li><span class="check-title"><i class="fa-solid fa-check text-blue"></i> <strong>창업도약패키지</strong> (2024~2025):</span> 25개사</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card reveal fade-up delay-1 flex-1" style="min-width: 300px; display: flex; flex-direction: column;">
-                    <div class="box-header" style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--primary); font-weight: 800;">
-                        <i class="fa-solid fa-calendar-check"></i> 2019년 이후 대상을 선정한 사유
-                    </div>
-                    <ul class="check-list" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-evenly; gap: 1.8rem; line-height: 1.6;">
-                        <li>
-                            <span class="check-title"><i class="fa-solid fa-database text-purple"></i> <strong>데이터 품질:</strong></span>
-                            <span class="check-desc" style="display: block; margin-top: 0.3rem;">과거 데이터의 비체계성으로 인한 확인 어려움 방지</span>
-                        </li>
-                        <li>
-                            <span class="check-title"><i class="fa-solid fa-triangle-exclamation text-red"></i> <strong>전처리 과부하 방지:</strong></span>
-                            <span class="check-desc" style="display: block; margin-top: 0.3rem;">불확실한 정보 기반 검색 시 필터 기준 및 키워드 제거 업무 과도화 방지</span>
-                        </li>
-                        <li>
-                            <span class="check-title"><i class="fa-solid fa-bullseye text-green"></i> <strong>모니터링 최적화:</strong></span>
-                            <span class="check-desc" style="display: block; margin-top: 0.3rem;">업무 효율성과 검색 효과성 등 모니터링 관리 목적에 부합하는 대상 한정</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- #5: 최종 분석 결과 예시 -->
-    <section id="section-9" class="section-padding dark-bg reveal">
-        <div class="container">
-            <div class="section-header">
-                <h2>#5 최종 분석 결과 예시 (대시보드 & 메일 브리핑)</h2>
-            </div>
-
-            <!-- 대시보드 예시 -->
-            <div style="margin-bottom: 3rem;">
-                <div style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
-                    <i class="fa-solid fa-display"></i> 대시보드 예시
-                </div>
-                <div class="glass-card reveal fade-up" style="margin-bottom: 1.5rem; padding: 1.2rem 1.5rem;">
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <li style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            <span style="font-weight: 700; color: var(--text-primary);">📰 주간 브리핑</span> — 해당 주차에 뉴스가 발생한 기업과 헤드라인을 한눈에 확인
-                        </li>
-                        <li style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            <span style="font-weight: 700; color: var(--text-primary);">🏢 기업 목록</span> — Alumni 전체 기업의 뉴스 보유 현황 및 기업 프로필 조회
-                        </li>
-                        <li style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            <span style="font-weight: 700; color: var(--text-primary);">🗂️ 뉴스 DB</span> — 기업명·기간·이벤트 타입 기준 뉴스 검색 및 이력 탐색
-                        </li>
-                    </ul>
-                </div>
-                <div style="overflow: hidden; border-radius: 14px; background: #f3f6fb;">
-                    <div style="background: #e2e8f0; border-bottom: 1px solid #cbd5e1; padding: 10px 16px; display: flex; align-items: center;">
-                        <span style="background: #ff5f56; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
-                        <span style="background: #ffbd2e; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
-                        <span style="background: #27c93f; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 14px;"></span>
-                        <span style="color: #64748b; font-size: 0.8rem; font-family: monospace;">SKTCH News Monitoring Dashboard</span>
-                    </div>
-                    <iframe src="design_preview.html" width="100%" height="600" style="border: none; display: block;"></iframe>
-                </div>
-            </div>
-
-            <!-- 메일 브리핑 예시 -->
-            <div>
-                <div style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
-                    <i class="fa-solid fa-envelope-open-text"></i> 메일 브리핑 예시
-                </div>
-                <div class="glass-card reveal fade-up" style="margin-bottom: 1.5rem; padding: 1.2rem 1.5rem;">
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem;">
-                        <li style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            <span style="font-weight: 700; color: var(--text-primary);">① 이번 주 뉴스 기업</span> — 해당 주차에 뉴스가 수집된 Alumni 기업 목록을 프로그램별로 표시
-                        </li>
-                        <li style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            <span style="font-weight: 700; color: var(--text-primary);">② 헤드라인 요약</span> — 기업별 대표 기사 제목과 핵심 내용을 빠르게 파악
-                        </li>
-                        <li style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            <span style="font-weight: 700; color: var(--text-primary);">③ 상세 내용 및 기업 정보</span> — 기사 요약과 함께 The VC 기반 기업 프로필을 카드형으로 제공
-                        </li>
-                    </ul>
-                </div>
-                <div style="overflow: hidden; border-radius: 20px; max-width: 900px; margin: 0 auto; background: #f3f6fb;">
-                    <div style="background: #e2e8f0; border-bottom: 1px solid #cbd5e1; padding: 12px 20px; display: flex; align-items: center;">
-                        <span style="background: #ff5f56; width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
-                        <span style="background: #ffbd2e; width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
-                        <span style="background: #27c93f; width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 20px;"></span>
-                        <span style="color: #64748b; font-size: 0.9rem; font-family: monospace;">Weekly News Briefing Mail</span>
-                    </div>
-                    <iframe src="SKTCH_2026_06_08_briefing_mail_preview.html" width="100%" height="640" style="border: none; display: block;"></iframe>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- #6: 결론 및 기대효과 -->
-    <section id="section-10" class="section-padding text-center reveal">
-        <div class="container">
-            <h2 class="impact-title">#6 결론 및 기대효과</h2>
-            <div class="impact-grid">
-                <div class="impact-item glass-card reveal fade-up">
-                    <div class="impact-icon"><i class="fa-solid fa-stopwatch-20"></i></div>
-                    <div class="impact-value">95%</div>
-                    <h3>관리 효율성</h3>
-                    <p>수동 작업 대비<br>모니터링 시간 95% 절감</p>
-                </div>
-                <div class="impact-item glass-card reveal fade-up delay-1">
-                    <div class="impact-icon"><i class="fa-solid fa-rocket"></i></div>
-                    <div class="impact-value">Real-time</div>
-                    <h3>비즈니스 적시성</h3>
-                    <p>주요 이슈 발생 시<br>즉각적인 협업 대응 체계 마련</p>
-                </div>
-                <div class="impact-item glass-card reveal fade-up delay-2">
-                    <div class="impact-icon"><i class="fa-solid fa-cubes"></i></div>
-                    <div class="impact-value">Expansion</div>
-                    <h3>플랫폼 확장성</h3>
-                    <p>SKTCH 플랫폼 개편 시 데이터 연동 및 시각화 활용</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container text-center">
-            <p>SKTCH AI News Monitoring System Showcase</p>
+            <p>SKTCH Report Dashboard &middot; Last updated <span id="footerDate"></span></p>
         </div>
     </footer>
 
