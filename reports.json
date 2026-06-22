@@ -57,7 +57,7 @@
     "id": "news-monitoring",
     "title": "AI 스타트업 뉴스 모니터링 시스템",
     "category": "data",
-    "categoryLabel": "데이터",
+    "categoryLabel": "모니터링",
     "status": "live",
     "statusLabel": "운영중",
     "summary": "Alumni 500+개사 대상 뉴스 자동 수집·분석 파이프라인. Naver API → 중복제거 → 이슈그룹화 → The VC 연동 → 주간 메일 브리핑까지 5단계 워크플로우로 모니터링 시간 95% 절감.",
