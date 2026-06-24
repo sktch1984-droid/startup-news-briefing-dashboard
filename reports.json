@@ -27,7 +27,7 @@
   },
   {
     "id": "ai-interview-agent",
-    "title": "AI 심사 에이전트 — 발표평가 질문지",
+    "title": "AI 심사에이전트 발표 평가 적용 테스트",
     "category": "ai",
     "categoryLabel": "AI/AX",
     "status": "progress",
@@ -197,7 +197,7 @@
   },
   {
     "id": "ax-report",
-    "title": "AI 연동 기능 개발 현황",
+    "title": "AI 심사에이전트 및 챗봇 개발 기획",
     "category": "ai",
     "categoryLabel": "AI/AX",
     "status": "progress",
