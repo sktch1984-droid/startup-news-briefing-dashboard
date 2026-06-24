@@ -26,6 +26,176 @@
     ]
   },
   {
+    "id": "ai-interview-agent",
+    "title": "AI 심사 에이전트 — 발표평가 질문지",
+    "category": "ai",
+    "categoryLabel": "AI/AX",
+    "status": "progress",
+    "statusLabel": "진행중",
+    "summary": "6개 페르소나 AI(재무, 기술·제품, 시장·BM, 팀·창업자, 임팩트, SK시너지)가 지원서를 기반으로 심사 질문지를 자동 생성. 팀 피드백을 반영한 고도화 진행 중.",
+    "keywords": ["페르소나 AI", "발표평가", "질문 자동생성", "팩트체크", "심사 보조"],
+    "url": "https://sktch-interview.coxwave.dev/",
+    "meta": [
+      { "icon": "fa-regular fa-calendar", "text": "2026.06 ~ 08" },
+      { "icon": "fa-solid fa-robot", "text": "6개 AI 페르소나" },
+      { "icon": "fa-solid fa-comments", "text": "팀 피드백 반영중" }
+    ],
+    "milestones": [
+      { "status": "done", "label": "페르소나 AI 설계 완료" },
+      { "status": "done", "label": "질문지 자동 생성 1차 배포" },
+      { "status": "current", "label": "팀 피드백 기반 고도화" },
+      { "status": "upcoming", "label": "질문 큐레이션 기능 (7월)" },
+      { "status": "upcoming", "label": "시스템 상용화 (8월)" }
+    ],
+    "timeline": [
+      { "start": 3, "end": 4, "label": "1차 개발" },
+      { "start": 4, "end": 5, "label": "피드백 반영", "active": true },
+      { "start": 5, "end": 7, "label": "상용화", "future": true }
+    ],
+    "detail": {
+      "tabs": [
+        {
+          "id": "overview",
+          "label": "개요",
+          "icon": "fa-solid fa-info-circle",
+          "content": [
+            {
+              "type": "description",
+              "text": "AI 심사위원은 재무, 기술·제품, 시장·BM, 팀·창업자, 임팩트, SK시너지 담당으로 각각 페르소나 AI를 설정하여 지원서를 기반으로 심사 질문지를 만듭니다. 단순 요약을 넘어, 심사자가 추가로 확인해야 할 리스크와 검증 포인트를 자동 도출합니다."
+            },
+            {
+              "type": "highlights",
+              "items": [
+                "지원서 기반 분석이 실제 심사에 유효함",
+                "사람이 놓칠 수 있는 추가 검증 질문을 제안",
+                "질문의 관점이 날카롭고 실무적으로 활용 가능",
+                "발표평가 시 심사 보조 도구로서 충분한 가능성"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "feedback",
+          "label": "피드백 요약",
+          "icon": "fa-solid fa-clipboard-check",
+          "content": [
+            {
+              "type": "feedback-list",
+              "items": [
+                {
+                  "category": "긍정",
+                  "color": "green",
+                  "text": "지원서 기반 리스크 포착 능력 우수 — 날카롭고 직설적인 질문 스타일 유지 필요"
+                },
+                {
+                  "category": "개선",
+                  "color": "amber",
+                  "text": "질문 우선순위·중요도 표시 필요 — 발표 시간 내 핵심 질문 선별 기준 제공"
+                },
+                {
+                  "category": "개선",
+                  "color": "amber",
+                  "text": "질문 생성 근거 명확화 — 지원서·팩트체크·시장분석·AI추론 출처 표시"
+                },
+                {
+                  "category": "개선",
+                  "color": "amber",
+                  "text": "경쟁사·유사 서비스 비교 정보 함께 제공 필요"
+                },
+                {
+                  "category": "개선",
+                  "color": "amber",
+                  "text": "산업별 필수 검토 질문 자동 반영 (디지털 헬스케어: IRB, 임상, 의료기기 등급)"
+                },
+                {
+                  "category": "개선",
+                  "color": "amber",
+                  "text": "투자 유치 기업 대상 VC 미팅 경험·피드백 검증 질문 추가"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "improvement",
+          "label": "개선 요청",
+          "icon": "fa-solid fa-wrench",
+          "content": [
+            {
+              "type": "request-list",
+              "items": [
+                {
+                  "title": "질문 우선순위화",
+                  "feasibility": "개선 가능",
+                  "feasibilityColor": "green",
+                  "schedule": "2차 배포",
+                  "details": [
+                    "질문별 중요도 표시 → 상/중/하",
+                    "질문 우선순위 제공 → 1순위 검증, 2순위 보조",
+                    "핵심 질문 추천 → 발표 시간이 짧을 경우 반드시 물어봐야 할 질문"
+                  ],
+                  "devNote": ""
+                },
+                {
+                  "title": "질문 생성 근거 표시",
+                  "feasibility": "개선 가능",
+                  "feasibilityColor": "green",
+                  "schedule": "2차 배포",
+                  "details": [
+                    "지원서 내 어떤 항목을 근거로 생성된 질문인지?",
+                    "팩트체크 결과를 바탕으로 한 질문인지?",
+                    "시장/경쟁사 분석을 바탕으로 한 질문인지?",
+                    "AI 분석 or 가설인지?",
+                    "질문이 어떤 평가 항목과 연결되는지?"
+                  ],
+                  "devNote": ""
+                },
+                {
+                  "title": "경쟁사 및 유사 서비스 비교 정보 제공",
+                  "feasibility": "구현 가능",
+                  "feasibilityColor": "green",
+                  "schedule": "2차 배포",
+                  "details": [
+                    "국내 유사 서비스",
+                    "해외 유사 서비스",
+                    "경쟁사 주요 기능",
+                    "해당 기업 주장 & 경쟁사 기능 차이점",
+                    "차별화 포인트"
+                  ],
+                  "devNote": "기존 개선 요청사항: 지원사 산업(도메인) 정보(산업 요약, 발전 가능성 등)에 상기 정보를 포함"
+                },
+                {
+                  "title": "산업별 필수 검토 질문 반영",
+                  "feasibility": "구현 가능",
+                  "feasibilityColor": "green",
+                  "schedule": "2차 배포 이후",
+                  "details": [
+                    "1차 심사 → 지원사 산업(도메인) 정보를 기반",
+                    "인터뷰(질문 생성) 시 도메인 전문가 페르소나 추가 → 해당 질문 항목 생성"
+                  ],
+                  "devNote": ""
+                },
+                {
+                  "title": "투자 유치 관련 실전 검증 질문 제공",
+                  "feasibility": "검토 필요",
+                  "feasibilityColor": "red",
+                  "schedule": "—",
+                  "details": [
+                    "VC 미팅 경험 여부",
+                    "투자 유치 성공 시 인정받은 강점",
+                    "투자 유치 실패 또는 지연 시 주요 사유",
+                    "VC로부터 반복적으로 받은 피드백"
+                  ],
+                  "devNote": "질문 생성을 위해 제시한 필수 데이터(VC 미팅 경험 여부, 투자 유치 성공 시 인정받은 강점 등)가 객관적(사실 기반) 정보가 아닌 것으로 보임 — 자료수집 및 분석이 불가능하거나 지원자별 경험을 사전 제공해야 함. 해당 조건이 갖춰진다 하더라도 도출되는 질문은 모든 지원자에게 보편적으로 적용되는 항목이 될 수밖에 없음."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "ax-report",
     "title": "AI 연동 기능 개발 현황",
     "category": "ai",

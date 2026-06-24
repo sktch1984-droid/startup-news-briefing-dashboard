@@ -17,6 +17,42 @@ document.addEventListener("DOMContentLoaded", async () => {
         reports = [];
     }
 
+    function renderDetailBlock(block) {
+        if (block.type === "description") {
+            return `<p class="detail-desc">${block.text}</p>`;
+        }
+        if (block.type === "highlights") {
+            return `<ul class="detail-highlights">${block.items.map(i => `<li><i class="fa-solid fa-check" style="color:var(--cat-data);margin-right:6px;font-size:0.7rem;"></i>${i}</li>`).join("")}</ul>`;
+        }
+        if (block.type === "feedback-list") {
+            return block.items.map(i => `
+                <div class="detail-feedback-item">
+                    <span class="fb-badge fb-${i.color}">${i.category}</span>
+                    <span class="fb-text">${i.text}</span>
+                </div>
+            `).join("");
+        }
+        if (block.type === "request-list") {
+            return block.items.map((i, idx) => `
+                <div class="detail-request-item">
+                    <div class="rq-header">
+                        <span class="rq-num">${idx + 1}</span>
+                        <strong>${i.title}</strong>
+                        <span class="rq-feasibility rq-f-${i.feasibilityColor || 'green'}">${i.feasibility || ''}</span>
+                        ${i.schedule ? `<span class="rq-schedule"><i class="fa-regular fa-calendar"></i> ${i.schedule}</span>` : ''}
+                    </div>
+                    ${i.details && i.details.length ? `
+                        <ul class="rq-details">
+                            ${i.details.map(d => `<li>${d}</li>`).join("")}
+                        </ul>
+                    ` : ''}
+                    ${i.devNote ? `<div class="rq-dev-note"><i class="fa-solid fa-code"></i> <strong>개발 의견:</strong> ${i.devNote}</div>` : ''}
+                </div>
+            `).join("");
+        }
+        return "";
+    }
+
     renderDashboard(reports);
 
     // Add report button
@@ -193,8 +229,50 @@ document.addEventListener("DOMContentLoaded", async () => {
                         </div>
                     `).join("")}
                 </div>
+                ${r.detail ? `
+                <div class="card-detail">
+                    <button class="detail-toggle" data-id="${r.id}"><i class="fa-solid fa-chevron-down"></i> 상세 보기</button>
+                    <div class="detail-panel" id="detail-${r.id}">
+                        <div class="detail-tabs">
+                            ${r.detail.tabs.map((tab, ti) => `
+                                <button class="detail-tab${ti === 0 ? ' active' : ''}" data-tab="${tab.id}" data-parent="${r.id}">
+                                    <i class="${tab.icon}"></i> ${tab.label}
+                                </button>
+                            `).join("")}
+                        </div>
+                        <div class="detail-tab-contents">
+                            ${r.detail.tabs.map((tab, ti) => `
+                                <div class="detail-tab-content${ti === 0 ? ' active' : ''}" data-tab-content="${tab.id}" data-parent="${r.id}">
+                                    ${tab.content.map(block => renderDetailBlock(block)).join("")}
+                                </div>
+                            `).join("")}
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
             </article>
         `).join("");
+
+        // Detail toggle & tabs
+        document.querySelectorAll(".detail-toggle").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const panel = document.getElementById("detail-" + btn.dataset.id);
+                const isOpen = panel.classList.contains("open");
+                panel.classList.toggle("open");
+                btn.innerHTML = isOpen
+                    ? '<i class="fa-solid fa-chevron-down"></i> 상세 보기'
+                    : '<i class="fa-solid fa-chevron-up"></i> 접기';
+            });
+        });
+        document.querySelectorAll(".detail-tab").forEach(tab => {
+            tab.addEventListener("click", () => {
+                const parent = tab.dataset.parent;
+                document.querySelectorAll(`.detail-tab[data-parent="${parent}"]`).forEach(t => t.classList.remove("active"));
+                document.querySelectorAll(`.detail-tab-content[data-parent="${parent}"]`).forEach(c => c.classList.remove("active"));
+                tab.classList.add("active");
+                document.querySelector(`.detail-tab-content[data-tab-content="${tab.dataset.tab}"][data-parent="${parent}"]`).classList.add("active");
+            });
+        });
 
         // Timeline
         const timelineBody = document.getElementById("timelineBody");
