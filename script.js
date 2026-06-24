@@ -53,6 +53,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         return "";
     }
 
+    const GROUP_COLORS = {
+        "1": { border: "#8b5cf6", bg: "rgba(139,92,246,0.04)" },
+        "2": { border: "#0ea5e9", bg: "rgba(14,165,233,0.04)" },
+        "3": { border: "#10b981", bg: "rgba(16,185,129,0.04)" },
+        "4": { border: "#f59e0b", bg: "rgba(245,158,11,0.04)" },
+        "5": { border: "#ef4444", bg: "rgba(239,68,68,0.04)" },
+        "6": { border: "#ec4899", bg: "rgba(236,72,153,0.04)" },
+    };
+
+    function getGroupNum(title) {
+        const m = title.match(/^\[(\d+)/);
+        return m ? m[1] : null;
+    }
+
     renderDashboard(reports);
 
     // Add report button
@@ -204,8 +218,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
 
         const grid = document.getElementById("reportGrid");
-        grid.innerHTML = reports.map(r => `
-            <article class="report-card" data-category="${r.category}" data-status="${r.status}">
+        grid.innerHTML = reports.map(r => {
+            const gn = getGroupNum(r.title);
+            const gc = gn && GROUP_COLORS[gn] ? GROUP_COLORS[gn] : null;
+            const cardStyle = gc ? `border-left: 4px solid ${gc.border}; background: ${gc.bg};` : '';
+            return `
+            <article class="report-card" data-category="${r.category}" data-status="${r.status}" style="${cardStyle}">
                 <div class="card-top">
                     <div class="card-badges">
                         <span class="cat-badge cat-${r.category}">${r.categoryLabel}</span>
@@ -251,7 +269,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
                 ` : ''}
             </article>
-        `).join("");
+        `}).join("");
 
         // Detail toggle & tabs
         document.querySelectorAll(".detail-toggle").forEach(btn => {
