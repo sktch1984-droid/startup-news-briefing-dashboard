@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         grid.innerHTML = reports.map(r => {
             const gn = getGroupNum(r.title);
             const gc = gn && GROUP_COLORS[gn] ? GROUP_COLORS[gn] : null;
-            const cardStyle = gc ? `border-left: 4px solid ${gc.border}; background: ${gc.bg};` : '';
+            const cardStyle = gc ? `background: ${gc.bg};` : '';
             return `
             <article class="report-card" data-category="${r.category}" data-status="${r.status}" style="${cardStyle}">
                 <div class="card-top">
@@ -302,7 +302,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (t.future) cls += " bar-future";
                 return `<div class="${cls}" style="grid-column: ${t.start} / ${t.end};"><span class="tl-bar-text">${t.label}</span></div>`;
             }).join("");
-            const shortName = r.title.length > 12 ? r.categoryLabel : r.title;
+            let shortName = r.title.length > 12 ? r.categoryLabel : r.title;
+            const bracketMatch = r.title.match(/^\[(\d+)-/);
+            if (bracketMatch && r.id === "ai-interview-agent") shortName = "AI/AX(심사문항)";
             return `
                 <div class="tl-row">
                     <div class="tl-label-col">
