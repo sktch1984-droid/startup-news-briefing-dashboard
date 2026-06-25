@@ -67,11 +67,6 @@
       { "icon": "fa-regular fa-calendar", "text": "2026.06 ~ 08 · 6개 AI 페르소나 · 팀 피드백 반영중" }
     ],
     "milestones": [
-      { "status": "done", "label": "페르소나 AI 설계 완료<br>(①재무 / ②기술·제품 / ③시장·BM / ④팀·창업자 / ⑤임팩트 / ⑥SK시너지)" },
-      { "status": "done", "label": "질문지 자동 생성 1차 배포" },
-      { "status": "current", "label": "팀 피드백 기반 고도화" },
-      { "status": "upcoming", "label": "질문 큐레이션 기능 (7월)" },
-      { "status": "upcoming", "label": "시스템 상용화 (8월)" }
     ],
     "timeline": [
       { "start": 3, "end": 4, "label": "1차 개발" },
@@ -85,6 +80,16 @@
           "label": "개요",
           "icon": "fa-solid fa-info-circle",
           "content": [
+            {
+              "type": "milestones",
+              "items": [
+                { "status": "done", "label": "페르소나 AI 설계 완료<br>(①재무 / ②기술·제품 / ③시장·BM / ④팀·창업자 / ⑤임팩트 / ⑥SK시너지)" },
+                { "status": "done", "label": "질문지 자동 생성 1차 배포" },
+                { "status": "current", "label": "팀 피드백 기반 고도화" },
+                { "status": "upcoming", "label": "질문 큐레이션 기능 (7월)" },
+                { "status": "upcoming", "label": "시스템 상용화 (8월)" }
+              ]
+            },
             {
               "type": "description",
               "text": "AI 심사위원은 재무, 기술·제품, 시장·BM, 팀·창업자, 임팩트, SK시너지 담당으로 각각 페르소나 AI를 설정하여 지원서를 기반으로 심사 질문지를 만듭니다. 단순 요약을 넘어, 심사자가 추가로 확인해야 할 리스크와 검증 포인트를 자동 도출합니다."

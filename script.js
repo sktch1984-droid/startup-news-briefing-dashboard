@@ -24,6 +24,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (block.type === "highlights") {
             return `<ul class="detail-highlights">${block.items.map(i => `<li><i class="fa-solid fa-check" style="color:var(--cat-data);margin-right:6px;font-size:0.7rem;"></i>${i}</li>`).join("")}</ul>`;
         }
+        if (block.type === "milestones") {
+            return `<div class="card-milestones" style="margin:8px 0;">${block.items.map(ms => `
+                <div class="milestone">
+                    <span class="ms-dot ${ms.status}"></span>
+                    <span class="ms-label">${ms.label}</span>
+                </div>
+            `).join("")}</div>`;
+        }
         if (block.type === "feedback-list") {
             return block.items.map(i => `
                 <div class="detail-feedback-item">
