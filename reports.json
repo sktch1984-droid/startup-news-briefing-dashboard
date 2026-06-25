@@ -64,12 +64,10 @@
     "keywords": ["페르소나 AI", "발표평가", "질문 자동생성", "팩트체크", "심사 보조"],
     "url": "https://sktch-interview.coxwave.dev/",
     "meta": [
-      { "icon": "fa-regular fa-calendar", "text": "2026.06 ~ 08" },
-      { "icon": "fa-solid fa-robot", "text": "6개 AI 페르소나" },
-      { "icon": "fa-solid fa-comments", "text": "팀 피드백 반영중" }
+      { "icon": "fa-regular fa-calendar", "text": "2026.06 ~ 08 · 6개 AI 페르소나 · 팀 피드백 반영중" }
     ],
     "milestones": [
-      { "status": "done", "label": "페르소나 AI 설계 완료<br>(재무 / 기술·제품 / 시장·BM / 팀·창업자 / 임팩트 / SK시너지)" },
+      { "status": "done", "label": "페르소나 AI 설계 완료<br>(①재무 / ②기술·제품 / ③시장·BM / ④팀·창업자 / ⑤임팩트 / ⑥SK시너지)" },
       { "status": "done", "label": "질문지 자동 생성 1차 배포" },
       { "status": "current", "label": "팀 피드백 기반 고도화" },
       { "status": "upcoming", "label": "질문 큐레이션 기능 (7월)" },
