@@ -69,7 +69,7 @@
       { "icon": "fa-solid fa-comments", "text": "팀 피드백 반영중" }
     ],
     "milestones": [
-      { "status": "done", "label": "페르소나 AI 설계 완료 (재무 / 기술·제품 / 시장·BM / 팀·창업자 / 임팩트 / SK시너지)" },
+      { "status": "done", "label": "페르소나 AI 설계 완료<br>(재무 / 기술·제품 / 시장·BM / 팀·창업자 / 임팩트 / SK시너지)" },
       { "status": "done", "label": "질문지 자동 생성 1차 배포" },
       { "status": "current", "label": "팀 피드백 기반 고도화" },
       { "status": "upcoming", "label": "질문 큐레이션 기능 (7월)" },
