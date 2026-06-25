@@ -32,6 +32,20 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
             `).join("")}</div>`;
         }
+        if (block.type === "persona-list") {
+            return block.items.map(i => `
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <span class="persona-num">${i.num}</span>
+                        <strong class="persona-name">${i.name}</strong>
+                    </div>
+                    <div class="persona-body">
+                        <div class="persona-row"><span class="persona-tag">역할</span><span>${i.role}</span></div>
+                        <div class="persona-row"><span class="persona-tag tag-verify">검증</span><span>${i.verify}</span></div>
+                    </div>
+                </div>
+            `).join("");
+        }
         if (block.type === "feedback-list") {
             return block.items.map(i => `
                 <div class="detail-feedback-item">

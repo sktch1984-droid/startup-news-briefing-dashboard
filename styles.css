@@ -484,6 +484,63 @@ h1, h2, h3, h4, strong { font-family: var(--font-heading); }
     margin-left: 30px;
 }
 
+/* Persona Cards */
+.persona-card {
+    padding: 14px;
+    margin-bottom: 10px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+}
+.persona-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.persona-num {
+    width: 24px; height: 24px;
+    background: var(--cat-ai);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.persona-name {
+    font-size: 0.88rem;
+    color: var(--text-main);
+}
+.persona-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 34px;
+}
+.persona-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+.persona-tag {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--cat-ai-light);
+    color: var(--cat-ai);
+    margin-top: 2px;
+}
+.persona-tag.tag-verify {
+    background: var(--cat-data-light);
+    color: var(--cat-data);
+}
+
 /* Timeline Section */
 .timeline-section {
     padding: 32px 0 60px;
